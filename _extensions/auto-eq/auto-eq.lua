@@ -41,7 +41,7 @@ function Para(element)
       if isNoEqRef(ref) then
         inlines:remove(j)
       elseif not isEqRef(ref) then
-        inlines:insert(j, pandoc.Str("{#eq-unnamed-" .. unnameCounter .. "}"))
+        inlines:insert(i + 1, pandoc.Str("{#eq-unnamed-" .. unnameCounter .. "}"))
         unnameCounter = unnameCounter + 1
       end
     end
