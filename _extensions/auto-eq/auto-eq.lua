@@ -39,9 +39,9 @@ function Para(element)
 
     if isDisplayMath(math) then
       if isNoEqRef(ref) then
-        inlines:remove(i + 1)
+        inlines:remove(j)
       elseif not isEqRef(ref) then
-        inlines:insert(i + 1, pandoc.Str("{#eq-unnamed-" .. unnameCounter .. "}"))
+        inlines:insert(j, pandoc.Str("{#eq-unnamed-" .. unnameCounter .. "}"))
         unnameCounter = unnameCounter + 1
       end
     end
